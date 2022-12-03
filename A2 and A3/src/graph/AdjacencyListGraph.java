@@ -21,4 +21,14 @@ public class AdjacencyListGraph implements Graph {
       adjacencyMapList.get(v1).add(v2);
     }
   }
+
+  @Override
+  public boolean edgeExists(Vertex v1, Vertex v2) {
+    // check whether v1 exists and it contains v2
+    if (adjacencyMapList.containsKey(v1)) {
+      return adjacencyMapList.get(v1).contains(v2);
+    }
+    return false;
+  }
+
 }
